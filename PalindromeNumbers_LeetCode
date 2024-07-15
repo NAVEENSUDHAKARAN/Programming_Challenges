@@ -1,0 +1,22 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+        if(x < 0)
+        {
+            return false;
+        }
+        int z = x;
+        int result=0;
+        while(z != 0)
+        {
+            int i = z%10;
+            result = result * 10 + i;
+            z/=10;
+        }
+
+        if(result == x)
+        {
+            return true;
+        }
+        return false;
+    }
+}
