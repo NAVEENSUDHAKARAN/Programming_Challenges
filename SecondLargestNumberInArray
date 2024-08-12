@@ -1,0 +1,25 @@
+function findSecondLargest(arr) {
+    if (arr.length < 2) {
+        throw new Error('Array should contain at least two elements.');
+    }
+
+    let largest = null;
+    let secondLargest = null;
+
+    for (const num of arr) {
+        if (largest === null || num > largest) {
+            secondLargest = largest;
+            largest = num;
+        } else if (num < largest && (secondLargest === null || num > secondLargest)) {
+            secondLargest = num;
+        }
+    }
+
+    return secondLargest;
+}
+
+const array = [10, 20, 4, 45, 99];
+console.log(findSecondLargest(array));
+
+const array2 = [1, 1, 1, 1];
+console.log(findSecondLargest(array2));
