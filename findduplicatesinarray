@@ -1,0 +1,20 @@
+function findDuplicates(arr) {
+    const frequency = {};
+
+    const duplicates = [];
+
+    for (const item of arr) {
+        frequency[item] = (frequency[item] || 0) + 1;
+    }
+
+    for (const key in frequency) {
+        if (frequency[key] > 1) {
+            duplicates.push(Number(key));
+        }
+    }
+
+    return duplicates;
+}
+
+const array = [1, 2, 3, 4, 5, 1, 2, 6, 7];
+console.log(findDuplicates(array));
